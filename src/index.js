@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {TrackerProvider} from './context/GeneralContext'
+import {SpeechProvider} from '@speechly/react-client'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SpeechProvider appId='5a07ff41-2afd-444d-8e74-58c979341290' language="en-US">
+    <TrackerProvider>
+      <App />
+    </TrackerProvider>
+    </SpeechProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
